@@ -6,7 +6,7 @@ npm install amazon-cognito-identity-node
 ```
 
 ## Usage
-``
+```sh
 var AWS = require('aws-sdk');
 var CognitoSDK = require('amazon-cognito-identity-js-node');
 
