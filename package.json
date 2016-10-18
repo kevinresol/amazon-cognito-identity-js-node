@@ -1,7 +1,7 @@
 {
   "name": "amazon-cognito-identity-js-node",
   "description": "Amazon Cognito Identity Provider JavaScript SDK for Node.js",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Takashi Kaneda",
   "repository": {
     "type": "git",
