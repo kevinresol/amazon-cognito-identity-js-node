@@ -13,4 +13,4 @@ var CognitoSDK = require('amazon-cognito-identity-js-node');
 AWS.CognitoIdentityServiceProvider.AuthenticationDetails = CognitoSDK.AuthenticationDetails;
 AWS.CognitoIdentityServiceProvider.CognitoUserPool = CognitoSDK.CognitoUserPool;
 AWS.CognitoIdentityServiceProvider.CognitoUser = CognitoSDK.CognitoUser;
-``
+```
