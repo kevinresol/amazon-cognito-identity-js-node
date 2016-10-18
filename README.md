@@ -1,5 +1,7 @@
 # Amazon Cognito Identity SDK for JavaScript for Node.js
 
+This module is a fork of [amazon-cognito-identity-js](https://github.com/aws/amazon-cognito-identity-js) and applicable to Node.js
+
 ## Install
 ```sh
 npm install amazon-cognito-identity-node
