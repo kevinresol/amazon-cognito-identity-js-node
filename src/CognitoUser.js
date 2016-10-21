@@ -841,7 +841,9 @@ module.exports = class CognitoUser {
     const storage = new LocalStorage('/tmp/storage');
 
     if (storage.getItem(lastUserKey)) {
-      this.username = storage.getItem(lastUserKey);
+//  Should set username directly like:
+//  cognitoUser.username = 'hoge@hoge.com'
+//      this.username = storage.getItem(lastUserKey);
       const deviceKeyKey = `${keyPrefix}.${this.username}.deviceKey`;
       this.deviceKey = storage.getItem(deviceKeyKey);
       authParameters.DEVICE_KEY = this.deviceKey;

@@ -4,7 +4,7 @@ This module is a fork of [amazon-cognito-identity-js](https://github.com/aws/ama
 
 ## Install
 ```sh
-npm install amazon-cognito-identity-node
+npm install amazon-cognito-identity-js-node
 ```
 
 ## Usage
