@@ -39,7 +39,7 @@ module.exports = class CognitoAccessToken {
    * @returns {int} the token's expiration (exp member).
    */
   getExpiration() {
-    const payload = this.jwtToken.split('.')[1]; console.log(payload);
+    const payload = this.jwtToken.split('.')[1];
     const expiration = JSON.parse(
       sjcl.codec.utf8String.fromBits(sjcl.codec.base64url.toBits(payload)));
     return expiration.exp;
