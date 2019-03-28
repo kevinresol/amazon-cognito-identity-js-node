@@ -27,6 +27,7 @@ var DateHelper = require('./DateHelper');
 var CognitoUserAttribute = require('./CognitoUserAttribute');
 
 var LocalStorage = require('node-localstorage').LocalStorage;
+var os = require('os');
 
 /**
  * @callback nodeCallback
@@ -792,7 +793,7 @@ module.exports = class CognitoUser {
     const refreshTokenKey = `${keyPrefix}.refreshToken`;
 
 //    const storage = window.localStorage;
-    const storage = new LocalStorage('/tmp/storage');
+    const storage = new LocalStorage(os.tmpdir() + '/storage');
 
     if (storage.getItem(idTokenKey)) {
       const idToken = new CognitoIdToken({
@@ -838,7 +839,7 @@ module.exports = class CognitoUser {
     const keyPrefix = `CognitoIdentityServiceProvider.${this.pool.getClientId()}`;
     const lastUserKey = `${keyPrefix}.LastAuthUser`;
 //    const storage = window.localStorage;
-    const storage = new LocalStorage('/tmp/storage');
+    const storage = new LocalStorage(os.tmpdir() + '/storage');
 
     if (storage.getItem(lastUserKey)) {
 //  Should set username directly like:
@@ -882,7 +883,7 @@ module.exports = class CognitoUser {
     const lastUserKey = `${keyPrefix}.LastAuthUser`;
 
 //    const storage = window.localStorage;
-    const storage = new LocalStorage('/tmp/storage');
+    const storage = new LocalStorage(os.tmpdir() + '/storage');
 
     storage.setItem(idTokenKey, this.signInUserSession.getIdToken().getJwtToken());
     storage.setItem(accessTokenKey, this.signInUserSession.getAccessToken().getJwtToken());
@@ -901,7 +902,7 @@ module.exports = class CognitoUser {
     const deviceGroupKeyKey = `${keyPrefix}.deviceGroupKey`;
 
 //    const storage = window.localStorage;
-    const storage = new LocalStorage('/tmp/storage');
+    const storage = new LocalStorage(os.tmpdir() + '/storage');
 
     storage.setItem(deviceKeyKey, this.deviceKey);
     storage.setItem(randomPasswordKey, this.randomPassword);
@@ -919,7 +920,7 @@ module.exports = class CognitoUser {
     const deviceGroupKeyKey = `${keyPrefix}.deviceGroupKey`;
 
 //    const storage = window.localStorage;
-    const storage = new LocalStorage('/tmp/storage');
+    const storage = new LocalStorage(os.tmpdir() + '/storage');
 
     if (storage.getItem(deviceKeyKey)) {
       this.deviceKey = storage.getItem(deviceKeyKey);
@@ -939,7 +940,7 @@ module.exports = class CognitoUser {
     const deviceGroupKeyKey = `${keyPrefix}.deviceGroupKey`;
 
 //    const storage = window.localStorage;
-    const storage = new LocalStorage('/tmp/storage');
+    const storage = new LocalStorage(os.tmpdir() + '/storage');
 
     storage.removeItem(deviceKeyKey);
     storage.removeItem(randomPasswordKey);
@@ -958,7 +959,7 @@ module.exports = class CognitoUser {
     const lastUserKey = `${keyPrefix}.LastAuthUser`;
 
 //    const storage = window.localStorage;
-    const storage = new LocalStorage('/tmp/storage');
+    const storage = new LocalStorage(os.tmpdir() + '/storage');
 
     storage.removeItem(idTokenKey);
     storage.removeItem(accessTokenKey);
